@@ -1,0 +1,14 @@
+# Backend Requirements
+Flask==2.1.0
+Flask-SQLAlchemy==2.5.1
+Flask-JWT-Extended==4.4.0
+werkzeug==2.0.3
+uuid==1.30
+
+# Frontend Requirements
+react==17.0.2
+react-dom==17.0.2
+axios==0.24.0
+react-router-dom==6.2.1
+tailwindcss==3.0.18
+```

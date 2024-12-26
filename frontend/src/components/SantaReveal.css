@@ -1,0 +1,81 @@
+.santa-reveal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.santa-reveal-container {
+  background: linear-gradient(135deg, #fff5f5 0%, #f0fff4 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.santa-animation {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sleigh {
+  font-size: 4rem;
+  position: absolute;
+  animation: flySleigh 3s ease-in-out;
+}
+
+.stars {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: twinkleStars 1s ease-in-out infinite;
+}
+
+.reveal-message {
+  animation: fadeIn 1s ease-out;
+}
+
+.santa-name {
+  animation: popIn 0.5s ease-out;
+}
+
+@keyframes flySleigh {
+  0% {
+    left: -100%;
+    top: 50%;
+  }
+  50% {
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    left: 200%;
+    top: 50%;
+  }
+}
+
+@keyframes twinkleStars {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+} 

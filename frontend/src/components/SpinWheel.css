@@ -1,0 +1,308 @@
+/* Wheel Animation */
+.wheel-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #96ceb4,
+    #ff6b6b
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.wheel-content {
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.spinning {
+  animation: spin 3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1800deg); }
+}
+
+/* Jar Animation */
+.jar-container {
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.jar {
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  border: 4px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper-slip {
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  transform-origin: center;
+}
+
+.picking .paper-slip {
+  animation: pickFromJar 3s ease-in-out;
+}
+
+@keyframes pickFromJar {
+  0% { transform: translateY(100px) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Magic Animation */
+.magic-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.magic-hat {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  clip-path: polygon(0 50%, 100% 50%, 80% 100%, 20% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magic-text {
+  color: white;
+  font-size: 2em;
+  opacity: 0;
+}
+
+.revealing .magic-text {
+  animation: magicReveal 3s forwards;
+}
+
+@keyframes magicReveal {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Christmas cursor styles */
+* {
+  cursor: url('./cursor/candy-cane.png'), auto;
+}
+
+button:hover {
+  cursor: url('./cursor/gift.png'), pointer;
+}
+
+/* Christmas lights animation */
+.christmas-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff0000 0px,
+    #ff0000 10px,
+    #00ff00 10px,
+    #00ff00 20px,
+    #0000ff 20px,
+    #0000ff 30px
+  );
+  animation: twinkle 1s infinite;
+  border-radius: 5px;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Gift box styles */
+.gift-box-container {
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto;
+  perspective: 1000px;
+}
+
+.gift-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.gift-box.shaking {
+  animation: shake 0.5s infinite;
+}
+
+.gift-box.opened .gift-lid {
+  transform: rotateX(-110deg);
+}
+
+.gift-lid {
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 30px;
+  background: #ff4444;
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.gift-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff6666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+  border-radius: 10px;
+}
+
+.gift-ribbon {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  background: #ffaaaa;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gift-ribbon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background: #ffaaaa;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.name-reveal {
+  display: none;
+}
+
+.revealed-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.snowflake {
+  animation: spin 3s linear infinite;
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px) rotate(-5deg); }
+  75% { transform: translateX(10px) rotate(5deg); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Christmas buttons */
+.reveal-btn {
+  background: linear-gradient(45deg, #ff4444, #ff6666);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255,68,68,0.3);
+  transition: all 0.3s;
+}
+
+.reveal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,68,68,0.4);
+}
+
+.reveal-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(46,204,113,0.3);
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46,204,113,0.4);
+}
+
+.name-display {
+  position: relative;
+  z-index: 10;
+  animation: fadeInDown 0.5s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gift-box-container {
+  margin-top: 1rem;
+} 

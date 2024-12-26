@@ -1,0 +1,100 @@
+.gift-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.recipient-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.gift-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+  transform: scale(1.05);
+}
+
+.gift-lid {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 40px;
+  background: #ff6b6b;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.gift-bow {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #ff8787;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.gift-bow::before,
+.gift-bow::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: #ff8787;
+  border-radius: 10px;
+}
+
+.gift-bow::before {
+  left: -10px;
+  transform: rotate(-45deg);
+}
+
+.gift-bow::after {
+  right: -10px;
+  transform: rotate(45deg);
+}
+
+.gift-base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  background: #ff6b6b;
+  border-radius: 5px;
+}
+
+.gift-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: #ff8787;
+}
+
+.gift-base::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 20px;
+  background: #ff8787;
+} 
